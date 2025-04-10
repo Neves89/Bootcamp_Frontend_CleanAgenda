@@ -28,8 +28,8 @@ const pageTitle = computed(() => {
 const submitForm = async () => {
   isLoadingForm.value = true
   const response = await request<StatusForm, null>({
-    method: pageMode == PageMode.PAGE_INSERT ? 'POST' : 'PUT',
-    endpoint: pageMode == PageMode.PAGE_INSERT ? 'status/insert' : `status/update/${id}`,
+    method: pageMode === PageMode.PAGE_INSERT ? 'POST' : 'PUT',
+    endpoint: pageMode === PageMode.PAGE_INSERT ? 'status/insert' : `status/update/${id}`,
     body: form.value
   })
 
@@ -37,7 +37,7 @@ const submitForm = async () => {
 
   toastStore.setToast({
     type: 'success',
-    text: `Status ${pageMode == PageMode.PAGE_INSERT ? 'criada' : 'alterada'} com sucesso!`
+    text: `Status ${pageMode === PageMode.PAGE_INSERT ? 'criada' : 'alterada'} com sucesso!`
   })
 
   router.push({ name: 'status-list' })

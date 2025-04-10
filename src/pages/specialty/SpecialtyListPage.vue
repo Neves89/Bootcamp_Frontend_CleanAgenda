@@ -37,7 +37,6 @@ const headers = [
   }
 ]
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 const handleDataTableUpdate = async ({ page: tablePage, itemsPerPage: tableItemsPerPage }: any) => {
   page.value = tablePage
   itemsPerPage.value = tableItemsPerPage
@@ -74,21 +73,6 @@ const deleteListItem = async (item: ISpecialty) => {
   })
 
   if (response.isError) return
-
-  toastStore.setToast({
-    type: 'success',
-    text: 'Especialidade deletada com sucesso!'
-  })
-
-  toastStore.setToast({
-    type: 'success',
-    text: 'Especialidade deletada com sucesso!'
-  })
-
-  toastStore.setToast({
-    type: 'success',
-    text: 'Especialidade deletada com sucesso!'
-  })
 
   toastStore.setToast({
     type: 'success',
