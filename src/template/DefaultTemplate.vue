@@ -4,10 +4,11 @@ import ClinicToast from '@/components/ClinicToast.vue'
 import {
   mdiAccountInjuryOutline,
   mdiAccountTag,
-  mdiDoctor,
   mdiHome,
   mdiLogout,
-  mdiShapeOutline
+  mdiShapeOutline,
+  mdiDoctor,
+  mdiCalendarMultiselect
 } from '@mdi/js'
 
 const drawer = ref(true)
@@ -34,9 +35,14 @@ const menus = ref([
     to: { name: 'patient-list' }
   },
   {
-    title: 'Doctors',
+    title: 'Doctor',
     icon: mdiDoctor,
     to: { name: 'doctor-list' }
+  },
+  {
+    title: 'Agendamento',
+    icon: mdiCalendarMultiselect,
+    to: { name: 'appointment-list' }
   }
 ])
 
